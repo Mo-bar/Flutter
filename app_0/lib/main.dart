@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home:Cards(), 
+      home: Columns_(), 
     );
   }
 }
@@ -73,14 +73,39 @@ class Cards extends StatelessWidget{
       body: const Card(
         color: Colors.lightBlue,
         elevation: 50, // shadow
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-          side: BorderSide(color: Colors.black, width: 4
-          )
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(20),
+        //   side: BorderSide(color: Colors.black, width: 4
+        //   )
+        // ),
         child: Text('HI FROM CARDS.', style: TextStyle(fontSize: 40))
       
       )
+    );
+  }
+}
+class Columns_ extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: const Drawer(),
+      body: Container(
+        width: double.infinity,
+        color: Colors.lightBlueAccent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
+          //spaceAround, spaceBetween, start, end
+          crossAxisAlignment: CrossAxisAlignment.center,
+          //start center end.
+          children: [
+          const Text('Widget 1'),
+          const Text('Widget 2'),
+          const Text('Widget 3'),
+          const Text('Widget 4')
+        ],
+        ),
+      ),
     );
   }
 }
