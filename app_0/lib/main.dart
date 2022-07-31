@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home:Login(), 
+      home:Cards(), 
     );
   }
 }
@@ -61,6 +61,26 @@ class Login extends StatelessWidget{
           )
         ),
       ),
+    );
+  }
+}
+class Cards extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: const Drawer(),
+      body: const Card(
+        color: Colors.lightBlue,
+        elevation: 50, // shadow
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(color: Colors.black, width: 4
+          )
+        ),
+        child: Text('HI FROM CARDS.', style: TextStyle(fontSize: 40))
+      
+      )
     );
   }
 }
