@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Columns_(),
+      home: Rows(),
     );
   }
 }
@@ -107,5 +107,34 @@ class Columns_ extends StatelessWidget{
         ),
       ),
     );
+  }
+}
+
+// rows props.
+class Rows extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Container(
+        height: double.infinity,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround, // spaceBetween, start end
+          crossAxisAlignment: CrossAxisAlignment.center, // start, center, end
+          children: [
+          Text('Widget 0'),
+          Text('widget 1'),
+          Container(
+            color: Colors.lightBlue, child: Text('Container'),
+          ),
+          Card(
+            child: Text('card'),
+            ),
+        ],)
+      ),
+    );
+
   }
 }
