@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Columns_(), 
+      home: Columns_(),
     );
   }
 }
@@ -18,7 +18,6 @@ class HomePage extends StatelessWidget{
       appBar: AppBar(),
       drawer: Drawer(),
       body: Text('Hello from HomePage.')
-
     );
   }
 }//UI: user interface.
@@ -72,7 +71,8 @@ class Cards extends StatelessWidget{
       drawer: const Drawer(),
       body: const Card(
         color: Colors.lightBlue,
-        elevation: 50, // shadow
+        elevation: 50,
+        // shadow
         // shape: RoundedRectangleBorder(
         //   borderRadius: BorderRadius.circular(20),
         //   side: BorderSide(color: Colors.black, width: 4
