@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Icons_(),
+      home: Exp(),
     );
   }
 }
@@ -63,6 +63,7 @@ class Login extends StatelessWidget{
     );
   }
 }
+//cards 
 class Cards extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -217,11 +218,13 @@ class Exp extends StatelessWidget{
             flex:2,
             child: Container(child: Text('One.'), color: Color.fromARGB(255, 52, 74, 26))
           ),
+          Divider(color: Colors.white, thickness:2), 
           Expanded
           (
             flex: 1,
             child: Container( child: Text('Two.'), color: Colors.lightGreen)
           ),
+          Divider(color:Colors.white, thickness:2),
           Expanded
           (
             flex: 1,
@@ -232,6 +235,7 @@ class Exp extends StatelessWidget{
     );
   }
 }
+//Icons.
 class Icons_ extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -248,10 +252,12 @@ class Icons_ extends StatelessWidget{
           (
             child: Icon(Icons.room, size:20, ),
           ),
+          VerticalDivider(color: Colors.lightBlue, thickness:2),
           Expanded
           (
             child: Icon(Icons.settings, size:20)
           ),
+          VerticalDivider(color: Colors.lightBlue, thickness:2),
           Expanded
           (
             child: Icon(Icons.youtube_searched_for, color: Colors.red)
