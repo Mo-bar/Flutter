@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Rows(),
+      home: Stacks(),
     );
   }
 }
@@ -136,5 +136,64 @@ class Rows extends StatelessWidget{
       ),
     );
 
+  }
+}
+
+//Stacks props.
+class Stacks extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Container(
+          width:400,
+          height: 400,
+          child: Stack
+          //overflow: Overflow.visible,
+          (
+            alignment: Alignment.bottomRight,
+            children : 
+            [
+              Container
+              (
+                width: 400,
+                height: 400,
+                color: Colors.blue,
+                child: Text('Container '),
+              ),
+              Container
+              (
+                width: 300,
+                height: 300,
+                // margin: EdgeInsets.all(20),
+                color: Color.fromARGB(255, 152, 26, 26),
+                child: Text('Container '),
+              ),
+              Container
+              (
+                width: 200,
+                height: 200,
+                // margin: EdgeInsets.all(40),
+                color: Color.fromARGB(255, 33, 243, 100),
+                child: Text('Container '),
+              ),
+              Positioned(
+                top:300,
+                height:200,
+                //bottom: 30,
+                right:40,
+                left:20,
+                child: Container(
+                  color: Colors.amberAccent,
+                  child: Text('Positioned.'),
+                ),
+                
+              ),
+
+            ],
+          ),
+      ), 
+    );
   }
 }
