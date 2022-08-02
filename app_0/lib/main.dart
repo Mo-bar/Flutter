@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Exp(),
+      home: Page_0(),
     );
   }
 }
@@ -263,6 +263,88 @@ class Icons_ extends StatelessWidget{
             child: Icon(Icons.youtube_searched_for, color: Colors.red)
           )
         ],
+      ),
+    );
+  }
+}
+
+//Training.
+class Page_0 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold
+    (
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Container
+      (
+        height:double.infinity,
+        width: double.infinity, 
+        child: Column
+        (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: 
+          [
+            Container
+            (
+              alignment: Alignment.center,
+              width:double.infinity,
+              margin: EdgeInsets.all(20),
+              child: Text('Title', style:TextStyle(fontWeight: FontWeight.bold,color:Colors.white )),
+              decoration:BoxDecoration(color: Colors.lightBlue, border:Border.all(color: Colors.black) ),
+
+            ),
+            Container
+            (
+              width:double.infinity,
+              margin: EdgeInsets.all(20),
+
+              child: 
+                Text('djscjsbcsjdkcskdcb jsdcbj jsdcb ksjdbcjk ksjdcbjk ksjdcbjd djcbj', textAlign: TextAlign.center,),
+
+            ),
+            Container
+            (
+              decoration:BoxDecoration(border:Border.all(color: Colors.black,width: 1)),
+              margin: EdgeInsets.all(10),
+              padding:EdgeInsets.all(10),
+              child: Column
+              (
+                children: 
+                [
+                  Row
+                  (                        
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: 
+                    [
+                      Row(
+
+                        children: [
+                          Icon(Icons.star, color: Colors.yellow),
+                          Icon(Icons.star, color: Colors.yellow),
+                          Icon(Icons.star, color: Colors.yellow),
+                          Icon(Icons.star),
+                          Icon(Icons.star),
+                        ],
+                      ),
+                      Text('17 reviews.', textAlign: TextAlign.start,)
+                    ],
+                  ),
+                  Container(
+                    margin:EdgeInsets.only(top:15),
+                    child: Row(  
+                      children: [
+                      Expanded( child: Column(children: [ Icon(Icons.restaurant,color: Colors.green),Text('Feed'),Text('2-4')],)),
+                      Expanded( child: Column(children: [ Icon(Icons.category,color: Colors.green),Text('Feed'),Text('2-4')],)),
+                      Expanded( child: Column(children: [ Icon(Icons.emoji_food_beverage,color: Colors.green),Text('Feed'),Text('2-4')],)),
+                    ],),
+                  ),
+                ],
+              ),
+            ),
+          
+          ],
+        ),
       ),
     );
   }
