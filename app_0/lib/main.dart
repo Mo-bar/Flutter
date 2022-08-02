@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Page_0(),
+      home: Stacks(),
     );
   }
 }
@@ -152,9 +152,11 @@ class Stacks extends StatelessWidget{
       (
           width:400,
           height: 400,
-          child: Stack
+          //child: Stack
+          child: IndexedStack  
           //overflow: Overflow.visible,
           (
+            index:1,
             alignment: Alignment.bottomRight,
             children : 
             [
