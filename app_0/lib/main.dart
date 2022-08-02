@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Exp(),
+      home: Icons_(),
     );
   }
 }
@@ -227,6 +227,35 @@ class Exp extends StatelessWidget{
             flex: 1,
             child: Container(child: Text('Three.'), color: Colors.amber)
           ),
+        ],
+      ),
+    );
+  }
+}
+class Icons_ extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold
+    (
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Row
+      (
+        children:
+        [
+
+          Expanded
+          (
+            child: Icon(Icons.room, size:20, ),
+          ),
+          Expanded
+          (
+            child: Icon(Icons.settings, size:20)
+          ),
+          Expanded
+          (
+            child: Icon(Icons.youtube_searched_for, color: Colors.red)
+          )
         ],
       ),
     );
