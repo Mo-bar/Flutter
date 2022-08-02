@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Stacks(),
+      home: Exp(),
     );
   }
 }
@@ -143,10 +143,12 @@ class Rows extends StatelessWidget{
 class Stacks extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Scaffold(
+    return Scaffold
+    (
       appBar: AppBar(),
       drawer: Drawer(),
-      body: Container(
+      body: Container
+      (
           width:400,
           height: 400,
           child: Stack
@@ -194,6 +196,39 @@ class Stacks extends StatelessWidget{
             ],
           ),
       ), 
+    );
+  }
+}
+
+//Expanded props.
+class Exp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold
+    (
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Column
+      (
+        children: 
+        [
+          Expanded
+          (
+            flex:2,
+            child: Container(child: Text('One.'), color: Color.fromARGB(255, 52, 74, 26))
+          ),
+          Expanded
+          (
+            flex: 1,
+            child: Container( child: Text('Two.'), color: Colors.lightGreen)
+          ),
+          Expanded
+          (
+            flex: 1,
+            child: Container(child: Text('Three.'), color: Colors.amber)
+          ),
+        ],
+      ),
     );
   }
 }
