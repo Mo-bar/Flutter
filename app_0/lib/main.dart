@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: center_(),
+      home: Elevated_button(),
     );
   }
 }
@@ -461,13 +461,55 @@ class Single_Child_scroll_view extends StatelessWidget{
     );
   }
 }
-class center_ extends StatelessWidget{
+class Elevated_button extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(),
-      body: Container(child: Center(child: Text('Container.' ,style: TextStyle(fontSize: 16))),color: Colors.red,width: 100, height: 120)
+      body: Column(
+        children: [
+          ElevatedButton(
+          onPressed:(){ print('bien fait!');},
+          child: Text('OK'),
+          // child:Row(
+          //   children: [
+          //     Icon(Icons.ac_unit),
+          //     Text('ac_unit'),
+          //   ]
+          // ),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.green,
+            elevation:10,
+            shadowColor: Colors.grey,
+            textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
+            
+          ),
+        ),
+        ElevatedButton.icon(
+          onPressed:(){print('ElevattedButton.icon');}, 
+          icon: Icon(Icons.ac_unit),
+          label: Text('ac_unit'),
+          style: ElevatedButton.styleFrom
+          (
+            primary: Colors.green,
+            elevation:10,
+            shadowColor: Colors.grey,
+            textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
+            
+          ),  
+        ),
+        MaterialButton(
+          onPressed:(){},
+          child:Text('MaterialButton.'),
+          splashColor: Color.fromARGB(255, 27, 64, 28),
+          //minEidth:200,
+          textColor: Colors.white,
+        )
+      ],
+      )
     );
   }
 }
