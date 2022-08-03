@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Wrap_(),
+      home: center_(),
     );
   }
 }
@@ -393,6 +393,81 @@ class Wrap_ extends StatelessWidget{
           )
         ],
       )
+    );
+  }
+}
+class Single_Child_scroll_view extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: SingleChildScrollView(
+        scrollDirection:Axis.vertical,
+        child: Column(
+
+        children: [
+          Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),          
+          Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),          
+          Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),          
+          Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),
+            Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),          
+          Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),          
+          Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          ),
+            Container(
+            margin: EdgeInsets.all(12),
+            color:Colors.red,
+            width:90,
+            height:100
+          )
+        ],
+        ),
+      )
+    );
+  }
+}
+class center_ extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Container(child: Center(child: Text('Container.' ,style: TextStyle(fontSize: 16))),color: Colors.red,width: 100, height: 120)
     );
   }
 }
