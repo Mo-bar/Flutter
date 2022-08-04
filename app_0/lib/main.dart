@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Float_button(),
+      home: Test(),
     );
   }
 }
@@ -581,3 +581,36 @@ class Float_button extends StatelessWidget{
     );
   }
 }
+//StatefulWidget
+class Test extends StatefulWidget{
+  State<StatefulWidget> createState(){
+    return TestState();
+  }
+}
+
+class TestState extends State<Test>{
+  Widget build(BuildContext context) {
+    var text ='Hello';
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(text),
+            ElevatedButton(
+              onPressed:(){
+                setState(() {
+                  text ='welcome';
+                });
+                print(text);
+                },
+              child: Text('Change Text.'),
+            )
+        ],)
+      )
+    );
+  }
+}
+
