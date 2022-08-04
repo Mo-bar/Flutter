@@ -7,7 +7,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Elevated_button(),
+      home: Float_button(),
     );
   }
 }
@@ -511,7 +511,7 @@ class Elevated_button extends StatelessWidget{
         ),
 
         IconButton(onPressed: (){},
-          icon: Icon(Icons.person),
+          icon: Icon(Icons.person), 
           iconSize: 30,
           color: Colors.red,
         ),
@@ -526,6 +526,46 @@ class Elevated_button extends StatelessWidget{
           )
         )
       ],
+      )
+    );
+  }
+}
+// floating action button.
+class Float_button extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.red,
+        ), 
+      body: ListView(
+        children: [
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+          Container(
+            child: Text('Container I'),color: Colors.orange, height: 140, margin: EdgeInsets.all(10),
+            ),
+        ],
       )
     );
   }
