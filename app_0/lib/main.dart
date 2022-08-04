@@ -524,6 +524,17 @@ class Elevated_button extends StatelessWidget{
             padding: EdgeInsets.all(10),
             child: Text('InkWeell.', style: TextStyle(color: Colors.white, fontSize: 15,fontWeight: FontWeight.bold))
           )
+        ),
+        GestureDetector(
+          child: Container(
+            color: Colors.grey,
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 13),
+            child: Text('Add.'),
+          ),
+          onTapUp:(tap){print('up');},
+          onTapDown: (tap){print('Dowm');},
+          onTapCancel: (){print('cancel');},
+          onLongPress:(){print('onLongPress');} //start end..
         )
       ],
       )
