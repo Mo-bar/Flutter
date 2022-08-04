@@ -507,6 +507,23 @@ class Elevated_button extends StatelessWidget{
           splashColor: Color.fromARGB(255, 27, 64, 28),
           //minEidth:200,
           textColor: Colors.white,
+          color: Colors.green,
+        ),
+
+        IconButton(onPressed: (){},
+          icon: Icon(Icons.person),
+          iconSize: 30,
+          color: Colors.red,
+        ),
+        InkWell(onTap:(){},
+          child: Container(
+            alignment: Alignment.center,
+            color: Colors.grey,
+            width:90,
+            height: 40,
+            padding: EdgeInsets.all(10),
+            child: Text('InkWeell.', style: TextStyle(color: Colors.white, fontSize: 15,fontWeight: FontWeight.bold))
+          )
         )
       ],
       )
