@@ -4,6 +4,7 @@ import 'package:app_0/check_box.dart';
 import 'package:app_0/radio.dart';
 import 'package:app_0/Switch.dart' as sw;
 import 'package:app_0/ListTile.dart';
+import 'package:app_0/Cirle_Avatar.dart';
 
 void main() {
   runApp(app());
@@ -12,7 +13,7 @@ class app extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: list_tile(),
+      home: circle_avatar(),
     );
   }
 }
