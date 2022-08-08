@@ -27,6 +27,7 @@ class _grid_viewState extends State<grid_view> {
     return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(),
+      ///________GridView.builder
       // body: Container(
       //   child: GridView.builder(
       //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -43,39 +44,57 @@ class _grid_viewState extends State<grid_view> {
       //     },
       //   ),
       // ),
-      body:Container(
-        child: GridView(
-          padding: EdgeInsets.only(top:10),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 5,
-            childAspectRatio: 1.5,
-            ),
-            children: [
-              Container(
-                color: Colors.redAccent,
-                height: 200,
-                child: null,
-              ),
-              Container(
-                color: Color.fromARGB(255, 177, 183, 68),
-                height: 200,
-                child: null,
-              ),
-              Container(
-                color: Color.fromARGB(255, 61, 52, 149),
-                height: 200,
-                child: null,
-              ),
-              Container(
-                color: Color.fromARGB(255, 88, 88, 88),
-                height: 200,
-                child: null,
-              ),
-            ],
-        ),
+      //___________GridView______________________________________
+      // body:Container(
+      //   child: GridView(
+      //     padding: EdgeInsets.only(top:10),
+      //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //       crossAxisCount: 3,
+      //       mainAxisSpacing: 5,
+      //       crossAxisSpacing: 5,
+      //       childAspectRatio: 1.5,
+      //       ),
+      //       children: [
+      //         Container(
+      //           color: Colors.redAccent,
+      //           height: 200,
+      //           child: null,
+      //         ),
+      //         Container(
+      //           color: Color.fromARGB(255, 177, 183, 68),
+      //           height: 200,
+      //           child: null,
+      //         ),
+      //         Container(
+      //           color: Color.fromARGB(255, 61, 52, 149),
+      //           height: 200,
+      //           child: null,
+      //         ),
+      //         Container(
+      //           color: Color.fromARGB(255, 88, 88, 88),
+      //           height: 200,
+      //           child: null,
+      //         ),
+      //       ],
+      //   ),
 
+      // )
+      //____________GridView.count
+      body: Container(
+        padding:EdgeInsets.all(10),
+        child: GridView.count(
+          crossAxisCount:3,
+          mainAxisSpacing: 5,
+          crossAxisSpacing: 5,
+          children: [
+            Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
+            Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
+            Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
+            Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
+            Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
+            Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
+          ],
+        ),
       )
     );
   }

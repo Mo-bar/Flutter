@@ -8,6 +8,7 @@ import 'package:app_0/Cirle_Avatar.dart';
 import 'package:app_0/Alert_dialog.dart';
 import 'package:app_0/ListView.dart';
 import 'package:app_0/GridView.dart';
+import 'package:app_0/list_generator.dart';
 
 void main() {
   runApp(app());
