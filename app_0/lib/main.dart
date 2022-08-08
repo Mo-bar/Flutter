@@ -10,6 +10,7 @@ import 'package:app_0/ListView.dart';
 import 'package:app_0/GridView.dart';
 import 'package:app_0/list_generator.dart';
 import 'package:app_0/appBar.dart';
+import 'package:app_0/drawer.dart';
 
 void main() {
   runApp(app());
@@ -18,7 +19,7 @@ class app extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: app_bar(),
+      home: drawer_(),
     );
   }
 }
