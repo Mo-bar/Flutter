@@ -9,6 +9,7 @@ import 'package:app_0/Alert_dialog.dart';
 import 'package:app_0/ListView.dart';
 import 'package:app_0/GridView.dart';
 import 'package:app_0/list_generator.dart';
+import 'package:app_0/appBar.dart';
 
 void main() {
   runApp(app());
@@ -17,7 +18,7 @@ class app extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: grid_view(),
+      home: app_bar(),
     );
   }
 }

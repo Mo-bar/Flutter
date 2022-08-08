@@ -22,11 +22,20 @@ class _list_viewState extends State<list_view> {
       'mobile' : 'Readme'
     },
   ];
+  List<Widget> widget_list = [
+    Container(child:Text('Widget'),color: Colors.grey,height: 100,),
+    Container(child:Text('Widget'),color: Colors.grey,height: 100,),
+    Container(child:Text('Widget'),color: Colors.grey,height: 100,),
+    Container(child:Text('Widget'),color: Colors.grey,height: 100,),
+    Container(child:Text('Widget'),color: Colors.grey,height: 100,),
+    Container(child:Text('Widget'),color: Colors.grey,height: 100,)
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(),
+      //_______________ListView_______________
       body: ListView(
         scrollDirection: Axis.vertical,
         // reverse: true,
@@ -70,8 +79,9 @@ class _list_viewState extends State<list_view> {
             height: 300,
           ),
           Container(
-            height:300,
+            // height:300,
             child: ListView.builder(
+              shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemCount:Mobile.length,
               itemBuilder: (context, i){
@@ -84,9 +94,10 @@ class _list_viewState extends State<list_view> {
               },
             )
           ),
+          //_______________ListView.separated_______________
           Container(
-            height:300,
             child: ListView.separated(
+              shrinkWrap:true,
               physics: NeverScrollableScrollPhysics(),
               itemCount:Mobile.length,
               itemBuilder: (context, i){
@@ -102,6 +113,28 @@ class _list_viewState extends State<list_view> {
               },
             )
           ),
+          //_________________ListView.custom
+          Container(
+            // height: 300,
+            child: ListView.custom(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              childrenDelegate: SliverChildBuilderDelegate((context, index) {
+                return Text('Container : $index');
+              },
+              childCount: 10, 
+              )
+              )
+          ),
+          //___________________SliverChildChildDelegate.
+          Container(
+            child:ListView.custom(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              childrenDelegate: SliverChildListDelegate(widget_list),
+            )
+          )
+
         ],
       )
       );
