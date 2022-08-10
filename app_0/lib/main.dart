@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'Drop_down_list.dart';
-import 'package:app_0/check_box.dart';
-import 'package:app_0/radio.dart';
+import 'Drop_down_list.dart' as drop_down_list;
+import 'package:app_0/check_box.dart' as chehck_box;
+import 'package:app_0/radio.dart' as radio_;
 import 'package:app_0/Switch.dart' as sw;
-import 'package:app_0/ListTile.dart';
-import 'package:app_0/Cirle_Avatar.dart';
-import 'package:app_0/Alert_dialog.dart';
-import 'package:app_0/ListView.dart';
-import 'package:app_0/GridView.dart';
-import 'package:app_0/list_generator.dart';
-import 'package:app_0/appBar.dart';
-import 'package:app_0/drawer.dart';
-import 'package:app_0/TabBarView.dart';
-import 'package:app_0/BottomNavigationBar.dart';
+import 'package:app_0/ListTile.dart' as list_tile;
+import 'package:app_0/Cirle_Avatar.dart' as cirle_avatar;
+import 'package:app_0/Alert_dialog.dart' as alert_dialog;
+import 'package:app_0/ListView.dart' as list_view;
+import 'package:app_0/GridView.dart' as grid_view;
+import 'package:app_0/list_generator.dart' as list_generator;
+import 'package:app_0/appBar.dart' as app_bar;
+import 'package:app_0/drawer.dart' as drawer;
+import 'package:app_0/TabBarView.dart' as tabbar_view;
+import 'package:app_0/BottomNavigationBar.dart' as bottomnavigation_bar; 
 import 'package:app_0/PageView.dart' as page_view;
 
 void main() {
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text('Main page'),),
       drawer: Drawer(),
       body: Text('Hello from HomePage.')
     );
