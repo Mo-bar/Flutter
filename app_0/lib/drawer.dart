@@ -49,7 +49,7 @@ class _drawer_State extends State<drawer_> {
       body: Center(child: ElevatedButton(
         child: Text('Open drawer.'),
         onPressed: (){
-          sk.currentState.openDrawer();
+          // sk.currentState.openDrawer();
         },
       ),
       )
