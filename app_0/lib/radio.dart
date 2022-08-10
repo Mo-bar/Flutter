@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class radio extends StatefulWidget {
-  const radio({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<radio> createState() => _radioState();
+  State<Test> createState() => _TestState();
 }
 
-class _radioState extends State<radio> {
+class _TestState extends State<Test> {
   String gender = '', country ='';
   @override
   Widget build(BuildContext context) {

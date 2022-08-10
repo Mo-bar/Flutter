@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:app_0/Switch.dart';
+import 'package:app_0/Switch.dart' as Switch_;
 
-class Test_State extends StatefulWidget {
-  const Test_State({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<Test_State> createState() => _Test_StateState();
+  State<Test> createState() => _TestState();
 }
 
-class _Test_StateState extends State<Test_State> {
+class _TestState extends State<Test> {
   var selectedItem = 0;
   List<Widget> pages = [
     Center(child: Text('Widget <One>', style: TextStyle(fontWeight: FontWeight.bold),),),
-    switch_()
+    Switch_.Test()
   ];
   @override
   Widget build(BuildContext context) {

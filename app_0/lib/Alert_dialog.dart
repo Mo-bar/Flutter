@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class alert_dialog extends StatefulWidget {
-  const alert_dialog({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<alert_dialog> createState() => _alert_dialogState();
+  State<Test> createState() => _TestState();
 }
 
-class _alert_dialogState extends State<alert_dialog> {
+class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

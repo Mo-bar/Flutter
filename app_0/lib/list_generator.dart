@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class list_generate extends StatefulWidget {
-  const list_generate({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<list_generate> createState() => _list_generateState();
+  State<Test> createState() => _TestState();
 }
 
-class _list_generateState extends State<list_generate> {
+class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

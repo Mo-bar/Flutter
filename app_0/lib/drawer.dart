@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class drawer_ extends StatefulWidget {
-  const drawer_({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<drawer_> createState() => _drawer_State();
+  State<Test> createState() => _TestState();
 }
 
-class _drawer_State extends State<drawer_> {
+class _TestState extends State<Test> {
   GlobalKey<ScaffoldState> sk = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {

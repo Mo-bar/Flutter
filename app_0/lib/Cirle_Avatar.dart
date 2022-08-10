@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class circle_avatar extends StatefulWidget {
-  const circle_avatar({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<circle_avatar> createState() => _circle_avatarState();
+  State<Test> createState() => _TestState();
 }
 
-class _circle_avatarState extends State<circle_avatar> {
+class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

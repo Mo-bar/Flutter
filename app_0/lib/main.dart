@@ -13,6 +13,7 @@ import 'package:app_0/appBar.dart';
 import 'package:app_0/drawer.dart';
 import 'package:app_0/TabBarView.dart';
 import 'package:app_0/BottomNavigationBar.dart';
+import 'package:app_0/PageView.dart' as page_view;
 
 void main() {
   runApp(app());
@@ -21,7 +22,7 @@ class app extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: Test_State(),
+      home: page_view.Test(),
     );
   }
 }

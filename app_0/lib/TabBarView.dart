@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-class tabbar_view extends StatefulWidget {
-  const tabbar_view({Key? key}) : super(key: key);
+
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<tabbar_view> createState() => _tabbar_viewState();
+  State<Test> createState() => _TestState();
 }
 
-class _tabbar_viewState extends State<tabbar_view> {
+class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

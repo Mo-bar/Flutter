@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class switch_ extends StatefulWidget {
-  const switch_({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<switch_> createState() => _switch_State();
+  State<Test> createState() => _TestState();
 }
 
-class _switch_State extends State<switch_> {
+class _TestState extends State<Test> {
   bool not = false, not2= false;
   @override
   Widget build(BuildContext context) {

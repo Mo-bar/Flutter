@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class Check_box extends StatefulWidget {
-  const Check_box({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<Check_box> createState() => _Check_boxState();
+  State<Test> createState() => _TestState();
 }
 
-class _Check_boxState extends State<Check_box> {
+class _TestState extends State<Test> {
   bool female = false, male = false, usa = false, ma = false;
   @override
   Widget build(BuildContext context) {

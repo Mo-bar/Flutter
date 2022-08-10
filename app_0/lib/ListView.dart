@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class list_view extends StatefulWidget {
-  const list_view({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<list_view> createState() => _list_viewState();
+  State<Test> createState() => _TestState();
 }
 
-class _list_viewState extends State<list_view> {
+class _TestState extends State<Test> {
   List Mobile = [
     {
       'company' : 'samsung',

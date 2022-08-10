@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 // gridview has same props with listView.
-class grid_view extends StatefulWidget {
-  const grid_view({Key? key}) : super(key: key);
+class Test extends StatefulWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
-  State<grid_view> createState() => _grid_viewState();
+  State<Test> createState() => _TestState();
 }
 
-class _grid_viewState extends State<grid_view> {
+class _TestState extends State<Test> {
     List Mobile = [
     {
       'company' : 'samsung',
