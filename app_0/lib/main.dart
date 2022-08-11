@@ -1,29 +1,48 @@
 import 'package:flutter/material.dart';
-import 'Drop_down_list.dart' as drop_down_list;
-import 'package:app_0/check_box.dart' as chehck_box;
-import 'package:app_0/radio.dart' as radio_;
-import 'package:app_0/Switch.dart' as sw;
-import 'package:app_0/ListTile.dart' as list_tile;
-import 'package:app_0/Cirle_Avatar.dart' as cirle_avatar;
+import 'Drop_down_list.dart' as drop_down_list; //
+import 'package:app_0/ListView.dart' as list_view; //
+import 'package:app_0/GridView.dart' as grid_view; //
+import 'package:app_0/list_generator.dart' as list_generator; //
+import 'package:app_0/ListTile.dart' as list_tile; //
+import 'package:app_0/check_box.dart' as check_box; //
+import 'package:app_0/radio.dart' as radio_; //
+import 'package:app_0/Switch.dart' as sw;//
+import 'package:app_0/Cirle_Avatar.dart' as cirle_avatar; //
 import 'package:app_0/Alert_dialog.dart' as alert_dialog;
-import 'package:app_0/ListView.dart' as list_view;
-import 'package:app_0/GridView.dart' as grid_view;
-import 'package:app_0/list_generator.dart' as list_generator;
-import 'package:app_0/appBar.dart' as app_bar;
-import 'package:app_0/drawer.dart' as drawer;
-import 'package:app_0/TabBarView.dart' as tabbar_view;
-import 'package:app_0/BottomNavigationBar.dart' as bottomnavigation_bar; 
+import 'package:app_0/appBar.dart' as app_bar;//
+import 'package:app_0/drawer.dart' as drawer;//
+import 'package:app_0/TabBarView.dart' as tabbar_view;//
+import 'package:app_0/BottomNavigationBar.dart' as bottomnavigation_bar; //
 import 'package:app_0/PageView.dart' as page_view;
 import 'package:app_0/TextFormField.dart' as text_form_field;
+import 'package:app_0/Navigation.dart' as nav;
 
 void main() {
   runApp(app());
 }
 class app extends StatelessWidget{
+  Map<String, WidgetBuilder> pagesRoute = {
+        'get_dropdownlist' :(context) => drop_down_list.Test(), //
+        'get_ListTile' :(context) => list_tile.Test(), //
+        'get_GridView' :(context) => grid_view.Test(), //
+        'get_ListView':(context) => list_view.Test(),//
+        'get_CheckkBox':(context) => check_box.Test(), //
+        'get_radio':(context) => radio_.Test(),//
+        'get_Switch':(context) => sw.Test(),//
+        'get_CircleAvatar':(context) => cirle_avatar.Test(),//
+        'get_AlertDialog':(context) => alert_dialog.Test(),//
+        'get_AppBar':(context) => app_bar.Test(),//
+        'get_Drawer':(context)=> drawer.Test(), //
+        'get_TabBarView':(context) => tabbar_view.Test(),//
+        'get_BottomNavigationBar':(context) => bottomnavigation_bar.Test(),//
+        'get_PageView':(context) => page_view.Test(),
+        'get_TextFromField':(context) => text_form_field.Test(),
+  };
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: text_form_field.Test(),
+      home: nav.Test(),
+      routes: pagesRoute
     );
   }
 }
