@@ -148,6 +148,15 @@ class _TestState extends State<Test> {
             }),
             child:Text('Slider')
           )),
+          Container(
+            alignment: Alignment.topCenter,
+            child: ElevatedButton(
+              onPressed: (() {
+                Navigator.of(context).pushNamed('get_ScrollController');
+              }),
+              child: Text('ScrollController'),
+            ),
+          )
         ]
       )
     );

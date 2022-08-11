@@ -17,6 +17,7 @@ import 'package:app_0/PageView.dart' as page_view;
 import 'package:app_0/TextFormField.dart' as text_form_field;
 import 'package:app_0/Navigation.dart' as nav;
 import 'package:app_0/Slider.dart' as slider_;
+import 'package:app_0/ScrollController.dart' as scroll_controller;
 
 void main() {
   runApp(app());
@@ -39,6 +40,7 @@ class app extends StatelessWidget{
         'get_PageView':(context) => page_view.Test(),
         'get_TextFromField':(context) => text_form_field.Test(),
         'get_Slider':(context){return slider_.Test();},
+        'get_ScrollController':(context) => scroll_controller.Test(),
   };
   @override
   Widget build(BuildContext context){
