@@ -14,6 +14,7 @@ import 'package:app_0/drawer.dart' as drawer;
 import 'package:app_0/TabBarView.dart' as tabbar_view;
 import 'package:app_0/BottomNavigationBar.dart' as bottomnavigation_bar; 
 import 'package:app_0/PageView.dart' as page_view;
+import 'package:app_0/TextFormField.dart' as text_form_field;
 
 void main() {
   runApp(app());
@@ -22,7 +23,7 @@ class app extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: page_view.Test(),
+      home: text_form_field.Test(),
     );
   }
 }
