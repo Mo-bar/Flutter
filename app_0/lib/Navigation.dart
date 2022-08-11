@@ -141,6 +141,13 @@ class _TestState extends State<Test> {
             }),
             child:Text('TextFormField')
           )),
+          Container(
+            alignment: Alignment.topCenter,
+            child: ElevatedButton(onPressed: (() {
+              Navigator.of(context).pushNamed('get_Slider');
+            }),
+            child:Text('Slider')
+          )),
         ]
       )
     );
