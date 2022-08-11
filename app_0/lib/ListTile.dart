@@ -13,13 +13,25 @@ class _TestState extends State<Test> {
     return Scaffold(
       appBar: AppBar(),
       drawer: Drawer(),
-      body: ListTile(
-        title: Text('S20 Ultra'),
-        subtitle: Text('Samsung'),
-        leading: Icon(Icons.phone_iphone),
-        trailing: Text('999 \$'),
-        isThreeLine:true,
-        onTap: (){},
+      body: Container(
+        child: Column(
+          children: [
+        ListTile(
+          title: Text('S20 Ultra'),
+          subtitle: Text('Samsung'),
+          leading: Icon(Icons.phone_iphone),
+          trailing: Text('999 \$'),
+          isThreeLine:true,
+          onTap: (){},
+        ),ElevatedButton(onPressed: () {
+          if(Navigator.of(context).canPop()){
+            Navigator.of(context).pop();
+            print(Navigator.of(context).canPop()); // => true/false
+            
+          }
+        }, child: Text('Back'))
+          ],
+        )
       ),
     );
   }
