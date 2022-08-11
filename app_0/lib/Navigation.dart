@@ -156,6 +156,15 @@ class _TestState extends State<Test> {
               }),
               child: Text('ScrollController'),
             ),
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            child: ElevatedButton(
+              onPressed: (() {
+                Navigator.of(context).pushNamed('get_showModalBottomSheet');
+              }),
+              child: Text('showModalBottomSheet'),
+            ),
           )
         ]
       )
