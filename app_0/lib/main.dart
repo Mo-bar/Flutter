@@ -19,6 +19,7 @@ import 'package:app_0/Navigation.dart' as nav;
 import 'package:app_0/Slider.dart' as slider_;
 import 'package:app_0/ScrollController.dart' as scroll_controller;
 import 'package:app_0/showModelBottomSheet.dart' as show_model_bottom_sheet;
+import 'package:app_0/SearchDelegate.dart' as search_delegate;
 
 void main() {
   runApp(app());
@@ -43,6 +44,7 @@ class app extends StatelessWidget{
         'get_Slider':(context){return slider_.Test();},
         'get_ScrollController':(context) => scroll_controller.Test(),
         'get_showModalBottomSheet':(context) => show_model_bottom_sheet.Test(),
+        'get_SearchDelegate':(context) => search_delegate.Test(),
   };
   @override
   Widget build(BuildContext context){

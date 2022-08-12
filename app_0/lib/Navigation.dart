@@ -165,6 +165,15 @@ class _TestState extends State<Test> {
               }),
               child: Text('showModalBottomSheet'),
             ),
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            child: ElevatedButton(
+              onPressed: (() {
+                Navigator.of(context).pushNamed('get_SearchDelegate');
+              }),
+              child: Text('SearchDelegate'),
+            ),
           )
         ]
       )
