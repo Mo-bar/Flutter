@@ -129,7 +129,7 @@ class _TestState extends State<Test> {
           child: TextFormField(
             textInputAction: TextInputAction.done,
             maxLines:1,
-            obscureText: true,
+            obscureText: true, //hidden Text
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
               hintText: 'Password',
