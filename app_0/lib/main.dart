@@ -20,6 +20,8 @@ import 'package:app_0/Slider.dart' as slider_;
 import 'package:app_0/ScrollController.dart' as scroll_controller;
 import 'package:app_0/showModelBottomSheet.dart' as show_model_bottom_sheet;
 import 'package:app_0/SearchDelegate.dart' as search_delegate;
+import 'package:app_0/Auth/Login.dart' as login;
+import 'package:app_0/Auth/SignUp.dart';
 
 void main() {
   runApp(app());
@@ -45,11 +47,19 @@ class app extends StatelessWidget{
         'get_ScrollController':(context) => scroll_controller.Test(),
         'get_showModalBottomSheet':(context) => show_model_bottom_sheet.Test(),
         'get_SearchDelegate':(context) => search_delegate.Test(),
+        'get_Login':(context) => login.Login(),
+        'get_SignUp':(context) => SignUp(), 
   };
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home: nav.Test(),
+      // home: list_view.Test(),
+      home: login.Login(),
+      theme: ThemeData(
+        hintColor: Color.fromARGB(221, 153, 153, 153),
+        focusColor: Color.fromARGB(255, 237, 88, 247),
+        primaryColor: Colors.amberAccent  // main color of the app(appbar, drawer...)
+      ),
       routes: pagesRoute
     );
   }
