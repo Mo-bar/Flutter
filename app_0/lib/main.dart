@@ -21,6 +21,7 @@ import 'package:app_0/ScrollController.dart' as scroll_controller;
 import 'package:app_0/showModelBottomSheet.dart' as show_model_bottom_sheet;
 import 'package:app_0/SearchDelegate.dart' as search_delegate;
 import 'package:app_0/Future.dart' as futur;
+import 'package:app_0/Position.dart' as pos;
 
 void main() {
   runApp(app());
