@@ -20,7 +20,7 @@ import 'package:app_0/Slider.dart' as slider_;
 import 'package:app_0/ScrollController.dart' as scroll_controller;
 import 'package:app_0/showModelBottomSheet.dart' as show_model_bottom_sheet;
 import 'package:app_0/SearchDelegate.dart' as search_delegate;
-import 'package:app_0/Auth/Homepage.dart';
+import 'package:app_0/Future.dart' as futur;
 
 void main() {
   runApp(app());
@@ -46,13 +46,13 @@ class app extends StatelessWidget{
         'get_ScrollController':(context) => scroll_controller.Test(),
         'get_showModalBottomSheet':(context) => show_model_bottom_sheet.Test(),
         'get_SearchDelegate':(context) => search_delegate.Test(),
-        'get_HomePage':(context) => Notes(),
+        'get_Future':(context) => futur.Test(),
   };
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       // home: list_view.Test(),
-      home: Login(),
+      home: futur.Test(),
       theme: ThemeData(
         hintColor: Color.fromARGB(221, 153, 153, 153),
         focusColor: Color.fromARGB(255, 237, 88, 247),

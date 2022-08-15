@@ -4,7 +4,6 @@ import 'Auth/Homepage.dart';
 import 'Auth/Login.dart';
 import 'Auth/SignUp.dart';
 import 'CRUD/addNotes.dart';
-
 void main() {
   runApp( MyApp());
 }
