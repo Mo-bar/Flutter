@@ -84,8 +84,7 @@ class _EditNotesState extends State<EditNotes> {
               ElevatedButton.icon(
                 onPressed: () async{
                   String req = "UPDATE notes SET  WHERE id = ${widget.id} ";
-                  print(title.text);
-                  int resp = await sql.updateData('notes', {'title' : title.text , 'note' : note.text }, '$widget.id');
+                  int resp = await sql.updateData('notes', {'title' : title.text , 'note' : note.text }, '${widget.id}');
                   if(resp > 0){
                     Navigator.of(context).pushNamed('get_HomePage');
                   }

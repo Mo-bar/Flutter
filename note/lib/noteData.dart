@@ -63,12 +63,12 @@ insertData(String table,Map<String, Object?> values) async {
 //   int  response = await  mydb!.rawInsert(sql);
 //   return response ; 
 // }
-updateData( table, Map<String, Object?> values,String?  id) async {
+updateData( table, Map<String, Object?> values,String  id) async {
   Database? mydb = await db ; 
   int  response = await  mydb!.update(table,values,where: id);
   return response ; 
 }
-deleteData(String table, String? id) async {
+deleteData(String table, String id) async {
   Database? mydb = await db ; 
   int  response = await  mydb!.delete(table, where: id);
   return response ; 
