@@ -40,25 +40,37 @@ CREATE TABLE notes( id INTEGER  PRIMARY KEY  AUTOINCREMENT,title TEXT NOT NULL ,
  print(" onCreate =====================================") ; 
 
 }
+readData(table) async {
+  Database? mydb = await db ; 
+  List<Map> response = await  mydb!.query(table);
+  return response ; 
+}
+//* Another method to get data
+// readData(String sql) async {
+//   Database? mydb = await db ; 
+//   List<Map> response = await  mydb!.rawQuery(sql);
+//   return response ; 
+// }
 
-readData(String sql) async {
+insertData(String table,Map<String, Object?> values) async {
   Database? mydb = await db ; 
-  List<Map> response = await  mydb!.rawQuery(sql);
+  int  response = await  mydb!.insert(table, values);
   return response ; 
 }
-insertData(String sql) async {
+//* Another method for insert
+// insertData(String sql) async {
+//   Database? mydb = await db ; 
+//   int  response = await  mydb!.rawInsert(sql);
+//   return response ; 
+// }
+updateData( table, Map<String, Object?> values,String?  id) async {
   Database? mydb = await db ; 
-  int  response = await  mydb!.rawInsert(sql);
+  int  response = await  mydb!.update(table,values,where: id);
   return response ; 
 }
-updateData(String sql) async {
+deleteData(String table, String? id) async {
   Database? mydb = await db ; 
-  int  response = await  mydb!.rawUpdate(sql);
-  return response ; 
-}
-deleteData(String sql) async {
-  Database? mydb = await db ; 
-  int  response = await  mydb!.rawDelete(sql);
+  int  response = await  mydb!.delete(table, where: id);
   return response ; 
 }
 }

@@ -23,22 +23,22 @@ class _SignUpState extends State<SignUp> {
             child: Column(children: 
             [
               Container(
-                margin:EdgeInsets.symmetric(horizontal: 20),
+                margin:const EdgeInsets.symmetric(horizontal: 20),
                 child:TextFormField(
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     hintText: 'First name',
-                    prefixIcon: Icon(Icons.person),
+                    prefixIcon: const Icon(Icons.person),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(radius)
                     )
                   )
                 )
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Container(
-                margin: EdgeInsets.symmetric(horizontal:20),
+                margin: const EdgeInsets.symmetric(horizontal:20),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.next,
@@ -46,7 +46,7 @@ class _SignUpState extends State<SignUp> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(radius)
                     ),
-                    prefixIcon: Icon(Icons.person),
+                    prefixIcon: const Icon(Icons.person),
                     hintText: 'Last name'
                   )
                 ),

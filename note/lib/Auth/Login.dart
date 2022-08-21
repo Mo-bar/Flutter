@@ -19,13 +19,13 @@ class _LoginState extends State<Login> {
                 child: Center(child: Image.asset('images/1.png'))
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 3,horizontal: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 3,horizontal: 10),
                   child: TextFormField
                   (
                     keyboardType: TextInputType.emailAddress,
                     textInputAction:TextInputAction.next,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email_outlined),
+                      prefixIcon: const Icon(Icons.email_outlined),
                       hintText: 'Email.',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)
@@ -34,12 +34,12 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 3,horizontal: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 3,horizontal: 10),
                   child: TextFormField(
                     obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock_open_outlined),
+                      prefixIcon: const Icon(Icons.lock_open_outlined),
                       hintText: 'Password.',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)
@@ -48,14 +48,12 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 3,horizontal: 20),
+                  margin: const EdgeInsets.symmetric(vertical: 3,horizontal: 20),
                   child: Row(
                     children : [
-                      Container(
-                        child: Text("If you haven't an account. "),
-                      ),
+                      const Text("If you haven't an account. "),
                       InkWell(  
-                        child: Text('Click here!',style: TextStyle(color: Colors.blue),),
+                        child: const Text('Click here!',style: TextStyle(color: Colors.blue),),
                         onTap: (){
                           Navigator.of(context).pushNamed('get_SignUp');
                         },
@@ -65,17 +63,17 @@ class _LoginState extends State<Login> {
                 ),
                 //Button___________________
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 3),
+                  margin: const EdgeInsets.symmetric(vertical: 3),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                     ElevatedButton(onPressed: (){                      
                       Navigator.of(context).pushNamed('get_HomePage');}, 
-                      child: Text('Log in',style: TextStyle(color: Colors.white),),
+                      child: const Text('Log in',style: TextStyle(color: Colors.white),),
                       style: ElevatedButton.styleFrom(
                         primary: Colors.blue,
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(
+                          side: const BorderSide(
                             color: Colors.blue,
                             width: 2
                           ),
@@ -86,13 +84,13 @@ class _LoginState extends State<Login> {
                     ),
 
                   ElevatedButton(onPressed: (){}, 
-                    child: Text('Cancel',style: TextStyle(color: Colors.white),),
+                    child: const Text('Cancel',style: TextStyle(color: Colors.white),),
                     style: ElevatedButton.styleFrom(
-                      animationDuration: Duration(seconds: 2),
+                      animationDuration: const Duration(seconds: 2),
                       enabledMouseCursor: MouseCursor.defer,
                       primary: Colors.blue,
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(
+                        side: const BorderSide(
                           color: Colors.blue,
                           width: 2
                         ),
