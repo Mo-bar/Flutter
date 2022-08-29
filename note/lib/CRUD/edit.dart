@@ -5,8 +5,8 @@ class EditNotes extends StatefulWidget {
   final new_title;
   final new_note ;
   final id;
+  
   const EditNotes({Key? key,this.new_title,this.new_note, this.id}) : super(key: key);
-
   @override
   State<EditNotes> createState() => _EditNotesState();
 }

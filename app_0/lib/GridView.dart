@@ -94,7 +94,7 @@ class _TestState extends State<Test> {
           //   Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
           //   Container(child: Icon(Icons.person_add),color: Colors.lightGreenAccent,),
           // ],
-          children: List.generate(6, (index) => Container(child: Icon(Icons.person_add),color: Color.fromARGB(255, 255, 208, 89),),),
+          children: List.generate(6, (index) => Container( width: 300,child: Icon(Icons.person_add),color: Color.fromARGB(255, 255, 208, 89),),),
         ),
       )
     );

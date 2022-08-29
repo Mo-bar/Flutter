@@ -15,7 +15,7 @@ class _TestState extends State<Test> {
       body: Container(
         child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisSpacing: 5,crossAxisSpacing: 3),
-          children: List.generate(40, (index) => Container(child: Text('Container: $index'),color: Colors.amberAccent,)),
+          children: List.generate(40, (index) => Container(width: 200,child: Text('Container: $index'),color: Colors.amberAccent,)),
         )
       ),
     );

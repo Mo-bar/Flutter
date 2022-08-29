@@ -53,7 +53,7 @@ class app extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       // home: list_view.Test(),
-      home: pos.Test(),
+      home: nav.Test(),
       theme: ThemeData(
         hintColor: Color.fromARGB(221, 153, 153, 153),
         focusColor: Color.fromARGB(255, 237, 88, 247),
