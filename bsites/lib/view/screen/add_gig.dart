@@ -1,9 +1,13 @@
+import 'package:ai_awesome_message/ai_awesome_message.dart';
+import 'package:bsites/view/screen/home_.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
-import '../../data/datasource/sqlflite.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import '../../data/datasource/sq_lite.dart';
 
 class Addproduct extends StatefulWidget {
-  const Addproduct({Key? key}) : super(key: key);
+  final String email;
+  const Addproduct({Key? key,required this.email}) : super(key: key);
 
   @override
   State<Addproduct> createState() => _AddproductState();
@@ -11,32 +15,38 @@ class Addproduct extends StatefulWidget {
 
 class _AddproductState extends State<Addproduct> 
 {
-  GlobalKey<FormState> gk = GlobalKey<FormState>();
-  TextEditingController name = TextEditingController();
+  GlobalKey<FormState> addgigKey = GlobalKey<FormState>();
+  TextEditingController gigName = TextEditingController();
   TextEditingController price = TextEditingController();
   TextEditingController duration = TextEditingController();
+  TextEditingController email = TextEditingController();
   TextEditingController desc = TextEditingController();
-  TextEditingController category = TextEditingController(); 
-  // List<String> niches = ['Logos','Web application','Mobile application','Tshirts'];
-  late int catController;
+  TextEditingController catName = TextEditingController();
+  int catId = 0;
   List<String> niches = [];
   SqlDb sql = SqlDb();
   late List<Map> listCat ;
 
-  @override
+  FToast fToast =  FToast();
+@override
   void initState() {
-    get_data();
+  loadData();
+    email.text = widget.email;
+    fToast = FToast();
+    fToast.init(context);
     super.initState();
   }
-  get_data() async{
+  // [{catId: 1, catName: Logos}, {catId: 2, catName: Web site}, {catId: 3, catName: Mobile app}, {catId: 4, catName: Mockup}]
+  loadData() async{
     listCat = await sql.getTableByName('Category');
-    for (var element in listCat) { niches.add('${element['name']}'); }
+    for (var element in listCat) { niches.add('${element['catName']}'); }
+    return await sql.getTableByName('Gig');
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: gk,
+        key: addgigKey,
         autovalidateMode: AutovalidateMode.disabled,
         child: ListView(
           children: [
@@ -58,17 +68,27 @@ class _AddproductState extends State<Addproduct>
                 )),
                 IconButton(//* save button
                 
-                  onPressed: (){
-                    if(gk.currentState!.validate()){
-                      // sql.insertData('Gig', <String, Object>{
-                      //   'name' : '${name.text}',
-                      //   'price' : price.text,
-                      //   'duration' : duration.text,
-                      //   'desc' : ${desc.text},
-                      //   'email' : ${email.text},
-                      //   'cat_id' : cat_controller,
-                      // });
-                      print('done');
+                  onPressed: ()async{
+                    if(addgigKey.currentState!.validate()){
+                          int tester = await sql.insertData('Gig', {
+                          'gigName' : gigName.text,
+                          'price' : price.text,
+                          'duration' : duration.text,
+                          'desc' : desc.text,
+                          'email' : email.text,
+                          'catId' :  catId,
+                        });
+                        if(tester > 0){
+                          setState(() {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home(email: email.text),));
+                              Navigator.of(context).push(
+                                AwesomeMessageRoute(
+                                  awesomeMessage: AwesomeHelper.createAwesome(title: "Notification", message:  "Added!"),
+                                  theme: Theme.of(context),
+                            ),
+                          );
+                          });
+                        }
                     }
                   }, 
                   icon: const Icon(Icons.save,size: 30, color:Colors.green))
@@ -81,21 +101,20 @@ class _AddproductState extends State<Addproduct>
               child: TextFormField(
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) => value == null || value =='' ? 'Required field': null,
-                controller: name,
+                controller: gigName,
                 maxLines: 1,
-                maxLength: 50,
+                maxLength: 23,
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.near_me_outlined),
-                  label: const Text('Gig name'),
+                  prefixIcon: const Icon(Icons.title_outlined),
+                  label: const Text('Title',),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14)
                   )
                 ),
               )
             ),
-            // const SizedBox(height: 8),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: DropdownSearch<String>(
@@ -104,11 +123,11 @@ class _AddproductState extends State<Addproduct>
                   showSearchBox: true,
                 ),
                 items:  niches,
-                // selectedItem: null,
+                selectedItem: null,
                 validator: (value) => value == null || value =='' ? 'Required field': null,
                 dropdownDecoratorProps: const DropDownDecoratorProps(
                   dropdownSearchDecoration: InputDecoration(
-                    prefixIcon: Icon(Icons.category),
+                    prefixIcon: Icon(Icons.category_outlined),
                     label: Text('Category'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(14))
@@ -116,10 +135,10 @@ class _AddproductState extends State<Addproduct>
                   )
                 ),
                 onChanged: (val) {
-                  int pos =  niches.indexWhere((element) => element == val);
-                  catController = ++pos;
-                  // print('value : $val');
-                  // print('index : $cat_controller');
+                  catName.text = val!;
+                  setState(() {
+                  catId = niches.indexOf(catName.text);
+                  });
                 },
               )
             ),
@@ -133,9 +152,8 @@ class _AddproductState extends State<Addproduct>
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.price_check_rounded),
+                  prefixIcon: const Icon(Icons.attach_money_outlined),
                   suffix: const Text('\$', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                  // helperText: 'jjjjjjjj',
                   label: const Text('Price'),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14)

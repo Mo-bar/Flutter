@@ -38,6 +38,8 @@ dependencies:
   sqflite: ^2.0.3+1
   oktoast: ^3.2.0
   fluttertoast: ^8.0.9
+  awesome_snackbar_content: ^0.0.8
+  ai_awesome_message: ^3.0.0
 
 dev_dependencies:
   flutter_test:

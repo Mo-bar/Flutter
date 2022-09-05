@@ -1,20 +1,19 @@
-import 'package:bsites/data/datasource/sqlflite.dart';
-import 'package:bsites/view/screen/auth/signup.dart';
+import 'package:bsites/data/datasource/sq_lite.dart';
+import 'package:bsites/view/screen/auth/sign_up.dart';
 import 'package:flutter/material.dart';
-import 'package:bsites/view/screen/Home.dart';
-import 'package:fluttertoast/fluttertoast.dart';  
+import 'package:bsites/view/screen/home_.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class Login extends StatefulWidget  {
   const Login({Key? key}) : super(key: key);
   @override
   State<Login> createState() => _LoginState();
 }
 class _LoginState extends State<Login>  {
-
   GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   TextEditingController email = TextEditingController();
   TextEditingController passwd = TextEditingController();
   SqlDb sql = SqlDb();
-  late FToast fToast;
+  FToast fToast =  FToast();
   @override
   void initState() {
       super.initState();
@@ -39,7 +38,6 @@ class _LoginState extends State<Login>  {
                     margin: const EdgeInsets.symmetric(vertical: 3,horizontal: 10),
                     child: TextFormField
                     (
-                      // initialValue: 'admin',
                       controller: email,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) => value == null || value =='' ? 'Required field!': null,
@@ -59,7 +57,6 @@ class _LoginState extends State<Login>  {
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 3,horizontal: 10),
                     child: TextFormField(
-                      // initialValue: 'admin',
                       controller: passwd,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) => value == null || value =='' ? 'Required field!': null,
@@ -83,7 +80,7 @@ class _LoginState extends State<Login>  {
                         InkWell(  
                           child: const Text('Click here!',style: TextStyle(color: Colors.blue),),
                           onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp(),));
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignUp(),));
                           },
                         )
                       ], 
@@ -98,12 +95,13 @@ class _LoginState extends State<Login>  {
                           {
                             List<Map> list = await sql.getdata('SELECT * FROM User WHERE email = "${email.text}"');
                             if(list.isNotEmpty ){
+                              // ignore: use_build_context_synchronously
                               Navigator.of(context).push(MaterialPageRoute(builder: ((context) =>  Home(
-                            email_: email.text,
+                            email: email.text,
                               ))));
-                              greenToast();
+                              greenToast('Done');
                             }else{
-                              redToast();
+                              redToast('Email not exists');
                             }
                           }                 
                         }, 
@@ -129,37 +127,58 @@ class _LoginState extends State<Login>  {
     );
     
   }
-  greenToast(){
+    void greenToast(String? str){
     fToast.showToast(
+      fadeDuration: 100,
       child: Container(
         width: 180,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.green
+          color: Colors.greenAccent
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const <Widget>[
-          Icon(Icons.done, color: Colors.white,),
-          Text('Done', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20 ,color: Colors.white),)
+          children:  <Widget>[
+          const Icon(Icons.done, color: Colors.white,),
+          Text('$str', style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 15 ,color: Colors.white),)
         ],)
       )
     );
     }  
-    redToast(){
+    void redToast(String? str){
     fToast.showToast(
+      fadeDuration: 50,
       gravity: ToastGravity.BOTTOM,
       child: Container(
         width: 180,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.red
+          color: Colors.orangeAccent
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const <Widget>[
-          Icon(Icons.error_outline_outlined, color: Colors.white,),
-          Text('Incorrect infos!', style: TextStyle( fontWeight: FontWeight.bold,fontSize: 20 ,color: Colors.white),)
+          children:  <Widget>[
+          const Icon(Icons.error_outline_outlined, color: Colors.white,),
+          Text('$str', style: const TextStyle( fontWeight: FontWeight.bold,fontSize: 15 ,color: Colors.white),)
+        ],)
+      )
+    );
+    }
+    void orangeToast(String? str){
+    fToast.showToast(
+      gravity: ToastGravity.BOTTOM,
+      fadeDuration: 50,
+      child: Container(
+        width: 180,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.orangeAccent
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children:  <Widget>[
+          const Icon(Icons.remove_done_outlined, color: Colors.white,),
+          Text('$str', style: const TextStyle( fontWeight: FontWeight.bold,fontSize: 15 ,color: Colors.white),)
         ],)
       )
     );

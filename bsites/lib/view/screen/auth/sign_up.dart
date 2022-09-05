@@ -1,6 +1,6 @@
-import 'package:bsites/view/screen/Home.dart';
-import 'package:bsites/data/datasource/sqlflite.dart';
-import 'package:bsites/view/screen/auth/login.dart';
+import 'package:bsites/view/screen/home_.dart';
+import 'package:bsites/data/datasource/sq_lite.dart';
+import 'package:bsites/view/screen/auth/log_in.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController birthday = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController passwd = TextEditingController();
-  TextEditingController dialCode = TextEditingController();
+  TextEditingController countryName = TextEditingController();
   double radius = 14;
   late Map<String, Object?> infos = {
                     'fname' : fname.text,
@@ -26,25 +26,21 @@ class _SignUpState extends State<SignUp> {
                     'birthday' : birthday.text,
                     'email' : email.text,
                     'passwd' : passwd.text,
-                    'dial_code' : dialCode.text,
+                    'countryName' : countryName.text,
                   };
   SqlDb sql = SqlDb();
   List<String> countries = [];
-  late FToast fToast;
-  int indexCountry = -1;
+  FToast fToast =  FToast();
   late List<Map> countries_;
   @override
   void initState() {
     fToast = FToast();
     fToast.init(context);
-    get_countries();
+    loadCountries();
     super.initState();
   }
-  get_countries() async{
+  loadCountries() async{
     countries_ = await sql.getTableByName('Country');
-    List<Map> user_ = await sql.getTableByName('User');
-    print(user_);
-    print(countries_);
     for (var element in countries_) {
       countries.add(element['name']);
     }
@@ -126,7 +122,6 @@ class _SignUpState extends State<SignUp> {
                   ),
                 showSelectedItems: true,
                 showSearchBox: true,
-                // disabledItemFn: (String s) => s.startsWith('I'),
                 ),
                 items:  countries,
                 dropdownDecoratorProps: DropDownDecoratorProps(
@@ -139,8 +134,7 @@ class _SignUpState extends State<SignUp> {
                 validator: (value)  =>  value == null || value.isEmpty ? 'Required field' : null,
                 onChanged: (value)
                 { 
-                  indexCountry = countries.indexWhere((element) => element == value!);
-                  dialCode.text = countries_[indexCountry]['dial_code'];
+                  countryName.text = value!;
                 },
                 selectedItem: null,
             ),
@@ -205,8 +199,9 @@ class _SignUpState extends State<SignUp> {
                       if(list.isEmpty ){
                         int helper = await sql.insertData('User', infos);
                         if(helper > 0){
+                          // ignore: use_build_context_synchronously
                           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: ((context) =>  Home(
-                            email_: email.text,
+                            email: email.text,
                           ))));
                           greenToast();
                         }

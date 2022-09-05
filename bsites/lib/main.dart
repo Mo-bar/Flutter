@@ -1,9 +1,5 @@
-import 'package:bsites/view/screen/auth/login.dart';
+import 'package:bsites/view/screen/auth/log_in.dart';
 import 'package:flutter/material.dart';
-
-//* pages
-import 'package:bsites/view/screen/Home.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -40,12 +36,12 @@ class MyApp extends StatelessWidget {
         
 
       ),
-      routes:{
-        'get_home':(context) => Home(),
-        'get_Login':(context) => const Login(),
+      // routes:{
+      //   'get_home':(context) => Home(email: '',),
+      //   'get_Login':(context) => Login(),
 
-      },
-      home:  Login(),
+      // },
+      home:  const Login(),
     );
   }
 }
