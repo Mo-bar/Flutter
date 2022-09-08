@@ -1,0 +1,8 @@
+{
+    "zenMode.centerLayout": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+    "dart.flutterShowEmulators": "always",
+    "editor.tabSize": 1,
+    "workbench.editor.tabSizing": "shrink"
+}
