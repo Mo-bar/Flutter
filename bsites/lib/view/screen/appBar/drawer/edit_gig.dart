@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_const
-
 import 'package:ai_awesome_message/ai_awesome_message.dart';
 import 'package:bsites/view/screen/home_.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -233,7 +231,7 @@ class _EditGigState extends State<EditGig> {
                     contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: verPadding),
                     prefixIcon: const Icon(Icons.attach_money_outlined,size: 20,),
                     border: const OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(const Radius.circular(18))
+                      borderRadius:  BorderRadius.all( Radius.circular(18))
                     )
                   ),
                 ),
